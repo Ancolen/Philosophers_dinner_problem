@@ -9,7 +9,7 @@ NAME	= philo
 
 GCC	= gcc
 
-FLAGS	= -pthread -Wall -Wextra -Werror #-fsanitize=thread -g
+FLAGS	= -pthread -Wall -Wextra -Werror -fsanitize=thread -g
 
 INCLUDE	= -lpthread
 
