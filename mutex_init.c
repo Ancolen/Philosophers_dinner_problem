@@ -6,12 +6,11 @@
 /*   By: myerturk <myerturk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 17:59:22 by myerturk          #+#    #+#             */
-/*   Updated: 2024/05/02 18:00:14 by myerturk         ###   ########.fr       */
+/*   Updated: 2024/05/03 13:47:44 by myerturk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
-#include <pthread.h>
 #include <stdlib.h>
 
 int	init_mutex(t_rules *rules)

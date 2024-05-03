@@ -6,13 +6,12 @@
 /*   By: myerturk <myerturk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 17:59:57 by myerturk          #+#    #+#             */
-/*   Updated: 2024/05/02 18:00:14 by myerturk         ###   ########.fr       */
+/*   Updated: 2024/05/03 14:25:30 by myerturk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 #include <unistd.h>
-#include <stdlib.h>
 #include <stdio.h>
 
 void	action_print(t_rules *rules, int id, char *string)
@@ -26,7 +25,6 @@ void	action_print(t_rules *rules, int id, char *string)
 		usleep(50);
 	}
 	pthread_mutex_unlock(&(rules->dieded_check));
-	return ;
 }
 
 void	eat_control(t_rules *r, t_philosopher *p)

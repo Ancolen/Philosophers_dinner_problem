@@ -6,13 +6,13 @@
 /*   By: myerturk <myerturk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 17:59:51 by myerturk          #+#    #+#             */
-/*   Updated: 2024/05/02 18:00:14 by myerturk         ###   ########.fr       */
+/*   Updated: 2024/05/03 13:49:03 by myerturk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "philo.h"
 #include <sys/time.h>
 #include <unistd.h>
-#include "philo.h"
 #include <stdlib.h>
 
 long long	timestamp(void)
