@@ -6,7 +6,7 @@
 /*   By: myerturk <myerturk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 17:59:44 by myerturk          #+#    #+#             */
-/*   Updated: 2024/05/03 13:47:31 by myerturk         ###   ########.fr       */
+/*   Updated: 2024/05/03 15:42:40 by myerturk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,9 @@ typedef struct s_rules
 	long long		first_timestamp;
 	pthread_mutex_t	t_last_meal_check;
 	pthread_mutex_t	x_ate_check;
-	pthread_mutex_t	die_check;
 	pthread_mutex_t	dieded_check;
 	pthread_mutex_t	all_ate_check;
-	pthread_mutex_t	dinner_check;
 	pthread_mutex_t	*forks;
-	pthread_mutex_t	writing;
-	pthread_mutex_t	die_write;
 	t_philosopher	*philosophers;
 }					t_rules;
 

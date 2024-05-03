@@ -6,7 +6,7 @@
 /*   By: myerturk <myerturk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 17:59:57 by myerturk          #+#    #+#             */
-/*   Updated: 2024/05/03 14:25:30 by myerturk         ###   ########.fr       */
+/*   Updated: 2024/05/03 15:43:25 by myerturk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,9 @@ void	philo_eats(t_philosopher *philo)
 	rules = philo->rules;
 	pthread_mutex_lock(&(rules->forks[philo->left_fork_id]));
 	pthread_mutex_lock(&(rules->forks[philo->right_fork_id]));
-	pthread_mutex_lock(&(rules->dinner_check));
-	pthread_mutex_lock(&(rules->die_write));
 	action_print(rules, philo->id, "has taken a fork");
 	action_print(rules, philo->id, "has taken a fork");
 	action_print(rules, philo->id, "is eating");
-	pthread_mutex_unlock(&(rules->die_write));
-	pthread_mutex_unlock(&(rules->dinner_check));
 	pthread_mutex_lock(&(rules->t_last_meal_check));
 	philo->last_dinner_time = timestamp();
 	pthread_mutex_unlock(&(rules->t_last_meal_check));

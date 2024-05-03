@@ -6,7 +6,7 @@
 /*   By: myerturk <myerturk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 17:59:37 by myerturk          #+#    #+#             */
-/*   Updated: 2024/05/03 13:47:50 by myerturk         ###   ########.fr       */
+/*   Updated: 2024/05/03 15:45:04 by myerturk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,10 @@ void	exit_launcher(t_rules *rules, t_philosopher *philos)
 	i = -1;
 	while (++i < rules->nb_philo)
 		pthread_mutex_destroy(&(rules->forks[i]));
-	pthread_mutex_destroy(&(rules->writing));
-	pthread_mutex_destroy(&(rules->die_check));
-	pthread_mutex_destroy(&(rules->dinner_check));
 	pthread_mutex_destroy(&(rules->x_ate_check));
 	pthread_mutex_destroy(&(rules->t_last_meal_check));
 	pthread_mutex_destroy(&(rules->dieded_check));
 	pthread_mutex_destroy(&(rules->all_ate_check));
-	pthread_mutex_destroy(&(rules->die_write));
 	ft_free(rules);
 }
 
@@ -85,14 +81,12 @@ void	death_checker(t_rules *r, t_philosopher *p, int i, int j)
 			if (time_diff(p[i].last_dinner_time, timestamp()) > r->death_drtion)
 			{
 				pthread_mutex_lock(&(r->dieded_check));
-				printf("%i ", (int)(timestamp() - r->first_timestamp));
+				printf("%lli ", timestamp() - r->first_timestamp);
 				printf("%i ", i + 1);
 				printf("%s\n", "died");
 				r->dieded = 1;
 				pthread_mutex_unlock(&(r->dieded_check));
 				j = -1;
-				while (++j < r->nb_philo)
-					pthread_mutex_unlock(&(r->forks[j]));
 			}
 			pthread_mutex_unlock(&(r->t_last_meal_check));
 			usleep(50);
