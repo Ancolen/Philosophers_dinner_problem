@@ -6,7 +6,7 @@
 /*   By: myerturk <myerturk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 17:59:10 by myerturk          #+#    #+#             */
-/*   Updated: 2024/05/02 18:00:14 by myerturk         ###   ########.fr       */
+/*   Updated: 2024/05/03 15:54:06 by myerturk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 int	parse_to_values(t_rules *rules, char **argv)
 {
 	rules->nb_philo = ft_atoi(argv[1]);
-	if (rules->nb_philo > 200)
-		return (write_error("Enter number philo less than 200!"), 1);
 	rules->death_drtion = ft_atoi(argv[2]);
 	rules->eat_duration = ft_atoi(argv[3]);
 	rules->sleep_duration = ft_atoi(argv[4]);
