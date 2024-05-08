@@ -70,7 +70,7 @@ void	exit_launcher(t_rules *rules, t_philosopher *philos)
 	ft_free(rules);
 }
 
-void	death_checker(t_rules *r, t_philosopher *p, int i, int j)
+void	death_checker(t_rules *r, t_philosopher *p, int i)
 {
 	while (!(r->all_ate))
 	{
@@ -86,7 +86,6 @@ void	death_checker(t_rules *r, t_philosopher *p, int i, int j)
 				printf("%s\n", "died");
 				r->dieded = 1;
 				pthread_mutex_unlock(&(r->dieded_check));
-				j = -1;
 			}
 			pthread_mutex_unlock(&(r->t_last_meal_check));
 			usleep(50);
@@ -114,7 +113,7 @@ int	philo_main(t_rules *rules)
 		pthread_mutex_unlock(&(rules->t_last_meal_check));
 		i++;
 	}
-	death_checker(rules, rules->philosophers, -1, -1);
+	death_checker(rules, rules->philosophers, -1);
 	exit_launcher(rules, phi);
 	return (0);
 }
